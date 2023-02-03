@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public class Dice {
-    private final int NUMBER_OF_SIDES = 6;
+
     private final int NUMBER_OF_TURNS = 5;
     private final int SPACES_TO_WIN = 20;
 
@@ -13,12 +13,18 @@ public class Dice {
 
     public void turns(){
         int total = 0;
-        for(int i = 1; i <= 5; i++) {
+        for(int i = 1; i <= NUMBER_OF_TURNS; i++) {
             System.out.println("#" + i + " " + "You Rolled a" + " " + randomNumber());
             total += randomNumber();
         }
             System.out.println("Your total is " + total +"!");
+            if(total == SPACES_TO_WIN){
+                System.out.println("YOU WIN!");
+            } else{
+                System.out.println("You Lose:(");
+            }
         }
+
 
 
 
